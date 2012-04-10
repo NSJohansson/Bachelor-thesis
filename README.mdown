@@ -4,25 +4,26 @@
 
 ###Abstract
 
-Description:
-
 ###Introduction
 
-Description:
+Suggested content: Project description, evaluation results, overview of the rest of the report
 
 ### Activity Based Computing
 
-Description:
+Suggested content: ABC paradigm, concepts, focus on adaptation (how are activities shown), discovery (learn about its environment), and suspend / resume, REST service (cross platform)
 
-### Activities on the iPad
+### Mobile Activities
 
-Description:
+Suggested content: How can activities work in a mobile / tablet environment, what differs from a desktop environment, does it make sense to use lokal applikations instead of cloud services on a mobile device, how to track user location, scenarios
 
 ### Implementation
 
-Description:
+Suggested content: Implementation of UI, communication with BLIP and ABC service
 
 ### Evalutation
 
-Description:
+Suggested content: Scenarios, test preparation, test execution, test results
 
+### Conclusion
+
+Suggested content: Conclusion, suggested improvements
