@@ -18,7 +18,7 @@ Suggested content: How can activities work in a mobile / tablet environment, wha
 
 ### Implementation
 
-Suggested content: Implementation of UI, communication with BLIP and ABC service
+Suggested content: Implementation of UI, communication with BLIP and ABC service, class diagram
 
 ### Evalutation
 
