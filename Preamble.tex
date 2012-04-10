@@ -1,0 +1,95 @@
+\documentclass[a4paper,titlepage,11pt,onecolumn,twoside,pdftex]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{ucs}
+%\usepackage{graphicx}
+\usepackage{fancyhdr} % fancy headers
+\usepackage{listings} % code listings
+\usepackage{float}
+\usepackage{caption}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{url}
+\usepackage{natbib} % Bibliography
+\usepackage{titlesec} % For styling chapters like sections
+\usepackage[table]{xcolor} % Row colors
+\usepackage{pdfpages} %Include PDF's
+
+\usepackage{hyperref}% Must now be the second-last package that is loaded
+\usepackage[acronym]{glossaries}% Must be last package, loaded after hyperref
+
+\graphicspath{{./images/}} %default folder for image
+
+\author{
+Hildur Uffe Flemberg (270689-3043, hufl@itu.dk),\\
+Niklas Schalck Johansson (121288-2727, nsjo@itu.dk)\\ \\
+Supervised by \\ Jakob E. Bardram (bardram@itu.dk)\\ \\ \\
+IT University of Copenhagen}
+
+\title{\Huge{Activity Based Client for iOS}}
+\date{Wednesday May 23th}
+
+\definecolor{Brown}{cmyk}{0,0.81,1,0.60}
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{rowBgrey}{RGB}{230,230,230}
+\definecolor{rowAgrey}{RGB}{243,243,243}
+
+\hypersetup{colorlinks,%
+	citecolor=black,%
+	filecolor=black,%
+	linkcolor=black,%
+	urlcolor=blue,%
+	pdftex}
+
+\oddsidemargin 0mm
+\evensidemargin 0mm
+\textwidth 16truecm
+
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyfoot{}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+\fancyhead[RO, LE]{\thepage}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\leftmark}
+\fancyhead[RE, LO]{Group 8}
+
+\fancyfoot[L]{IT University of Copenhagen}
+\fancyfoot[R]{Spring 2012}
+
+\makeatletter
+\let\ps@plain\ps@fancy
+\makeatother
+
+\lstset{
+	language=Java,
+	numbers=left,
+	numberstyle=\tiny,
+	frame=l,
+	frameround=tttt,
+	tabsize=4,
+	basicstyle=\scriptsize,
+	keywordstyle=\ttfamily\color{OliveGreen},
+	identifierstyle=\ttfamily\color{CadetBlue}\bfseries,
+	commentstyle=\color{Brown},
+	stringstyle=\textbf,
+	showspaces=false, 
+	showstringspaces=false,
+	breaklines=true
+}
+
+\titleformat{\chapter}
+  {\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
+\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\newcommand{\dictentry}[2]{%
+  \newglossaryentry{#1}{name=#1,description={#2}}%
+  \glslink{#1}{}%
+}
+
+\makeglossaries
