@@ -32,5 +32,5 @@ Suggested content: Conclusion, suggested improvements
 ## Research question suggestions
 
 + Is it better to use cloud services instead of localized applications in a tablet environment? (in correlation to suspend / resume e.g. if the cloud service handles this, then the tablet nor the framework need not)
-+ Can the introduction of "templates" and "categories" improve the creation and handling of activities?
++ Can the introduction of "categories" improve the creation and handling of activities?
 + What technologi is better for location tracking when using activities? (e.g GPS offers very precise location tracking when moving on large distances, but is not as effective as bluetooth and WiFi when pin pointing your location in a confined space)
