@@ -39,18 +39,23 @@ A student have a busy day at the University. In the morning the student have to 
 *Goal*: Test context awareness from a student point of view. Test the use of cloud services for handling all resources.
 
 **Scenario 2:**
-A professor got a day full of meetings at the University. In the beginning of the day he will have a meeting with head of a study programme at which he teaches a course. They will discuss several course related material, and course goals, and will require the use of the course website, a document with the goals of the study programme, the exercises used in the course. Later he will have a lunch meeting with a fellow colleague in the cantina, to discuss an idea for a project. During preparation he have found several online resources on the matter, and have made a few designs and diagrams he wants to share. After lunch he got a meeting in his office with a couple of students regarding a bachelor thesis, and needs to review some code written, which includes looking over several source code files, as well as a generated documentation file. Afterwards he got a meeting with a PhD student in his office, regarding his thesis that needs review, and also to discuss a certain article found online. During the meeting the search through an article db located online, and find a couple of interesting articles that they add for later use.
+A professor got a day full of meetings at the University. In the beginning of the day he will have a meeting with the head of a study programme at which he teaches a course. They will discuss several course related material, and course goals, and will require the use of the course website, a document with the goals of the study programme, the exercises used in the course. Later he will have a lunch meeting with a fellow colleague in the cantina, to discuss an idea for a project. During preparation he have found several online resources on the matter, and have made a few designs and diagrams he wants to share. After lunch he got a meeting in his office with a couple of students regarding a bachelor thesis, and needs to review some code written, which includes looking over several source code files, as well as a generated documentation file. Afterwards he got a meeting with a PhD student in his office, regarding his thesis that needs review, and also to discuss a certain article found online. During the meeting the search through an article db located online, and find a couple of interesting articles that they add for later use.
 
 *Goal*: Test context awareness from a professor point of view. Test the use of cloud services for handling all resources. Test category filtering (mutiple activities of the same category).
 
 ### Category: Activity Management and Usage
 
 **Scenario 1:**
-A student receives a call from a fellow student, and ask if they can meet up in 10 minutes. The fellow student also ask to bring their latest homework assignment solution, as well as the reading material from the course base. He ask this because the lecture later in the day have been cancelled due to illness, and it is not possible to move it to another day.
+A student receives a call from a fellow student, and ask if they can meet up in 10 minutes. The fellow student also ask to bring their solution to the latest homework assignment, as well as the reading material from the course base. He ask this because the lecture later in the day have been cancelled due to illness, and it is not possible to move it to another day.
 
 *Goal*: Use of categories, creation of activity, deleting activity, adding resources.
 
 **Scenario 2:**
+A professor writes to his students that he no longer will be using the course website that they have been using so far. All course material have been moved to a new website, where they can be assesed. One of the student had just saved all the old materials, and have to remove them, and add them for the new course website instead.
 
+*Goal*: Adding and removing resources.
 
-*Goal*: 
+**Scenario 2:**
+A professer receives an e-mail that some of his student would like to meet up and discuss last week exercises and their sugested solutions. They have uploaded all their file to a public folder online, and have sent him the URL for this folder, and want to discuss all the materials individually there.
+
+*Goal*: Use of categories, creation of activity, deleting activity, adding resources.
