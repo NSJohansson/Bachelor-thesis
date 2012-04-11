@@ -20,7 +20,7 @@ Suggested content: How can activities work in a mobile / tablet environment, wha
 
 Suggested content: Implementation of UI, communication with BLIP and ABC service, class diagram
 
-### Evalutation
+### Evaluation
 
 Suggested content: Scenarios, test preparation, test execution, test results
 
