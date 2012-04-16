@@ -4,19 +4,21 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{ucs}
+%\usepackage{graphicx}
 \usepackage{fancyhdr} % fancy headers
 \usepackage{listings} % code listings
 \usepackage{float}
 \usepackage{caption}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{url}
-\usepackage[numbers]{natbib} % Bibliography
+\usepackage{natbib} % Bibliography
 \usepackage{titlesec} % For styling chapters like sections
 \usepackage[table]{xcolor} % Row colors
 \usepackage{pdfpages} %Include PDF's
-\setlength{\headheight}{15pt}
+\usepackage{url}
+\setlength{\headheight}{14pt}
 
-\usepackage{hyperref}% Must now be the second-last package that is loaded
+%\usepackage{hyperref}% Must now be the second-last package that is loaded
 \usepackage[acronym]{glossaries}% Must be last package, loaded after hyperref
 
 \graphicspath{{./images/}} %default folder for image
@@ -36,11 +38,12 @@ IT University of Copenhagen}
 \definecolor{rowBgrey}{RGB}{230,230,230}
 \definecolor{rowAgrey}{RGB}{243,243,243}
 
-%\hypersetup{colorlinks,
+%\hypersetup{colorlinks,%
 %	citecolor=black,%
 %	filecolor=black,%
 %	linkcolor=black,%
-%	urlcolor=blue}
+%	urlcolor=blue,%
+%	pdftex}
 
 \oddsidemargin 0mm
 \evensidemargin 0mm

@@ -1,1 +1,50 @@
 \chapter{Introduction}
+
+\section{Context}
+In modern times, work practices are often complex entities with respect to the number of resources and work flows involved. The seemingly simple task of doing a standard health check of a patient could easily involve e.g. a doctor, a nurse, a secretary and several documents including the patient record etc. Furthermore, the doctor’s office might not be a sufficient location to complete the task - the patient might need to accompany the nurse to the lab to have a blood sample taken, go back to the office to have the doctor test his eyes and initially the doctor might need to get the patients record from the secretary in the reception.
+Today, computers are heavily used as a tool for optimization when carrying out tasks like these. They solve single tasks on the lowest level like reading e-mails, looking up records in databases and filling out forms very efficiently thus leaving it up to the user to find out for each instance of a work flow which applications, files, documents etc. he needs to prepare to do his job. While this doesn’t render the tasks impossible to carry out, it implies some practical overhead in terms of time and mind capacity that moves attention of expert users from things that add value to their work to things that are less important.
+
+\section{Background}
+Activity Based Computing is a new paradigm that changes the focus of tradi- tional computing environments from low level tasks like e-mail checking or web browsing to a higher level abstraction in the shape of an activity like “Perform- ing a health check”. An activity encapsulates all the smaller tasks and resources that are needed to complete it and provides a manageable unit that can be sus- pended and resumed, run in parallel with other activities and moved around while it adapts to the new surroundings.
+The ABC project started in 2003 with it’s outset in pervasive computing de- signed for mobile, collaborative and time critical work for clinicians in hospitals. Research on ABC is currently developed and maintained by the ABC research team led by Jakob E. Bardram [1] and is financially funded by The Danish Council for Strategic Research [1]. The research team has developed five ver- sions of the ABC framework, and is currently working on a sixth version. The ABC framework implements services for handling activities and resources. The fifth version in use is a Java based peer-to-peer based on the Aexo infrastructure and is targeted for non-PC devices [1]. The ABC framework will be described in more detail in chapter 2.
+
+\section{Motivation}
+With the introduction of touch screen tablet PCs on the market back in 2001 [3], a new family of devices with yet another screen size and touch screen per- formance matured. Even though the concept of a tablet PC is not a new one, tablets have since 2001 undergone major changes in the sense that they have become common and they have gotten more interactive user interfaces due to improved touch functionality. \citet{bardram2011} argues that: “Once you move away from the desktop and into a non-office-like environment such as a hospital, the challenges arising from the management of parallel activities and interruption are amplified because multi-tasking is now combined with a high degree of mobility [...]”
+Given the challenges of mobile work environments, the recent improvement of tablet computers and the fact that the experimentation with iOS as a technically well-suited operating system within ABC has not previously been explored, we will implement an iOS ABC client for the Apple iPad.
+
+\section{Goals}
+The purpose of the project is to develop an ABC client for the ABC framework running on the iOS platform with the following goals:
+
+\begin{description}
+  \item[Activity Centered] \hfill \\
+  It must to support the notion of activities.
+  \item[Activity Awareness] \hfill \\
+  It needs to able to adapt and adjust itself according to its location, mean- ing that the types of resources available and the UI representation is always dependent of the current working context.
+  \item[Activity Suspend and Resume] \hfill \\
+  It needs to able to save the state of one activity in order to restore and resume another previously suspended activity.
+  \item[Uniform UI] \hfill \\
+  It must have a uniform UI, meaning that whatever concrete kinds of dis- plays we choose to build these must be the same for any activity as long as the activities are resumed in the same location and under the same conditions.
+\end{description}
+
+\section{Methods}
+The goals will be achieved through these methods
+
+\begin{description}
+  \item[Investigation - iOS] \hfill \\
+  We will investigate the iOS platform and discuss how we can apply the above mentioned goals. This will be done by following classes on iOS development and reading related articles on the subject.
+
+  \item[Investigation - Location tracking] \hfill \\
+We will investigate what hardware resources is available on the iPad, and discuss which is better for location tracking. We will then discuss how this can be connected to the result of the iOS investigation, and how it will support the ABC principle of activity-awareness.
+
+  \item[Implementation] \hfill \\
+  Based on the analysis and discussion of the important elements we will define a list of requirements and implement a client for iOS that supports these requirements. The client will make use of the ABC framework.
+  
+  \item[Evaluation] \hfill \\
+We will evaluate the implementation by defining user scenarios that em- phasize the mobility challenge in a hospital environment, where a user needs to bring digital resources with them, and have the test persons complete the scenario. Afterwards we will have the test persons fill out a questionnaire where they will rate and evaluate the implemented fea- tures. Finally we will analyze the results and suggest improvements to our solution.
+\end{description}
+
+\section{Results}
+TODO
+
+\section{Overview}
+TODO
