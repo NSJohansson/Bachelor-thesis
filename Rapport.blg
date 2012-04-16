@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2010)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Rapport.aux
+A level-1 auxiliary file: pages/Abstract.aux
+A level-1 auxiliary file: pages/ProjectDescription.aux
+The style file: ChicagoReedweb.bst
+Database file #1: bibtex.bib.bib
+Warning--entry type for "tabletwiki2012" isn't style-file defined
+--line 71 of file bibtex.bib.bib
+Warning--string name "usage:" is undefined
+--line 76 of file bibtex.bib.bib
+I was expecting a `,' or a `}'---line 76 of file bibtex.bib.bib
+ :  title = usage: 
+ :                 \hyperref{''http://en.wikipedia.org/wiki/Microsoft_Tablet_PC''},
+I'm skipping whatever remains of this entry
+Warning--entry type for "team2012" isn't style-file defined
+--line 79 of file bibtex.bib.bib
+"{" immediately follows a field part---line 84 of file bibtex.bib.bib
+ :  title = \hyperref
+ :                   {"http://activitybasedcomputing.com"},
+I'm skipping whatever remains of this entry
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty journal in chittaro
+You've used 10 entries,
+            3202 wiz_defined-function locations,
+            1125 strings with 13247 characters,
+and the built_in function-call counts, 3835 in all, are:
+= -- 318
+> -- 120
+< -- 11
++ -- 45
+- -- 33
+* -- 203
+:= -- 687
+add.period$ -- 33
+call.type$ -- 10
+change.case$ -- 51
+chr.to.int$ -- 10
+cite$ -- 11
+duplicate$ -- 300
+empty$ -- 302
+format.name$ -- 47
+if$ -- 739
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 51
+newline$ -- 52
+num.names$ -- 40
+pop$ -- 146
+preamble$ -- 1
+purify$ -- 51
+quote$ -- 0
+skip$ -- 131
+stack$ -- 0
+substring$ -- 112
+swap$ -- 97
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 90
+warning$ -- 1
+while$ -- 30
+width$ -- 0
+write$ -- 110
+(There were 2 error messages)

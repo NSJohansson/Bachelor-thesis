@@ -10,10 +10,13 @@
 	\chaptermark{}
 	\listoftables
 	\chaptermark{}
-	%\include{pages/glossary}
 	\newpage
+	\nocite{*}
 	
 	\include{pages/Abstract}
 	\include{pages/ProjectDescription}
+	\bibliographystyle{ChicagoReedweb}
+	\bibliography{bibtex.bib}
+	\printglossary
 	
 \end{document}

@@ -1,0 +1,58 @@
+\begin{thebibliography}{10}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{}
+
+\bibitem[{{A.R. Team}()}]{team2012}
+{A.R. Team}, .
+
+\bibitem[{Bardram(2009)}]{bardram2009}
+Bardram, Jakob~E.
+\newblock \enquote{Activity-Based Computing for Medical Work in Hospitals.}
+\newblock \emph{ACM Transactions on Computer-Human Interaction} Vol. 16,  No.
+  2.
+
+\bibitem[{Bardram(2011)}]{bardram2011}
+\rule[.6ex]{3em}{.05ex}.
+\newblock \enquote{The Activity-Based Computing Project.}
+\newblock \emph{AAAI Workshop (WS-11-04)} Techniques and Languages.
+
+\bibitem[{{Bardram et al.}(2006)}]{bardram2006}
+{Bardram et al.}
+\newblock \enquote{Support for Activity-Based Computing in a Personal Computing
+  Operating System.}
+\newblock \emph{CHI 2006} .
+
+\bibitem[{{Bardram et al.}(2012)}]{bardram2012}
+\rule[.6ex]{3em}{.05ex}.
+\newblock \enquote{ReticularSpaces: Activity-Based Computing Support for
+  Physically Distributed and Collaborative Smart Spaces.}
+\newblock \emph{CHI 2012} .
+
+\bibitem[{Chittaro()}]{chittaro}
+Chittaro, Luca.
+\newblock \enquote{VISUALIZING INFORMATION ON MOBILE DEVICES.} .
+
+\bibitem[{{Consolvo et al.}(2008)}]{consolv2008}
+{Consolvo et al.}
+\newblock \enquote{Activity sensing in the wild: a field trial of ubifit
+  garden.}
+\newblock \emph{CHI 2008} .
+
+\bibitem[{{Froehlich et al.}.(2009)}]{froehlich2009}
+{Froehlich et al.}.
+\newblock \enquote{UbiGreen: investigating a mobile tool for tracking and
+  supporting green transportation habits.}
+\newblock \emph{CHI 2009} .
+
+\bibitem[{Skov and Hoeegh(2006)}]{skov2006}
+Skov, Michael~B., and Rune~Th. Hoeegh.
+\newblock \enquote{Supporting information access in a hospital ward by a
+  context-aware mobile electronic patient.}
+\newblock \emph{Pers. Ubiquit. Comput. 10: 205-214} .
+
+\bibitem[{Various()}]{tabletwiki2012}
+Various, .
+
+\end{thebibliography}

@@ -1,20 +1,20 @@
 \documentclass[a4paper,titlepage,11pt,onecolumn,twoside,pdftex]{report}
 
-\usepackage[utf8]{inputenc}
+\usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{ucs}
-%\usepackage{graphicx}
 \usepackage{fancyhdr} % fancy headers
 \usepackage{listings} % code listings
 \usepackage{float}
 \usepackage{caption}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{url}
-\usepackage{natbib} % Bibliography
+\usepackage[numbers]{natbib} % Bibliography
 \usepackage{titlesec} % For styling chapters like sections
 \usepackage[table]{xcolor} % Row colors
 \usepackage{pdfpages} %Include PDF's
+\setlength{\headheight}{15pt}
 
 \usepackage{hyperref}% Must now be the second-last package that is loaded
 \usepackage[acronym]{glossaries}% Must be last package, loaded after hyperref
@@ -36,12 +36,11 @@ IT University of Copenhagen}
 \definecolor{rowBgrey}{RGB}{230,230,230}
 \definecolor{rowAgrey}{RGB}{243,243,243}
 
-\hypersetup{colorlinks,%
-	citecolor=black,%
-	filecolor=black,%
-	linkcolor=black,%
-	urlcolor=blue,%
-	pdftex}
+%\hypersetup{colorlinks,
+%	citecolor=black,%
+%	filecolor=black,%
+%	linkcolor=black,%
+%	urlcolor=blue}
 
 \oddsidemargin 0mm
 \evensidemargin 0mm
