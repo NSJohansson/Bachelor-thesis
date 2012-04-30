@@ -63,10 +63,9 @@ This is where the principle of activity awareness becomes important. Many wirele
 With current wireless technologies one could use some kind of antennas in different locations and relate those to certain activities. In this way the device could communicate with these antennas and ask where it is right now and based on the activity relations, only show the activities that takes place in this location. We can specify this kind of filtering as \emph{location filtering}. Location filtering is thus a concrete way of handling activity awareness.
 
 With regards to activity adaptation it is interesting to consider the result of the evaluation from \citet{bardram2009}:
-
 \begin{quotation}
 	\emph{
-		This means that if an activity is roamed from a display with a large resolution (e.g., 1900×1600) to one with a low resolution (e.g., 800×600), a significant portion of the activity’s application windows will potentially be left outside the visible area of the display. A related issue arose when clinicians asked for activity roaming between very large devices (e.g., the wall display in the team room) to very small devices (e.g., a PDA or a SmartPhone). In principle, the ABC framework can run on a PDA or a Java-enabled SmartPhone using the J2ME edition. The real challenge, however, is to investigate further what it actually means to roam an activity between two such very different types of devices—--especially if we take into consideration that the clinicians saw the small devices as tools for more specific actions within the overall activity. One possible approach may be to support roaming a subpart of an activity to a small device, instead of roaming the whole activity.
+		This means that if an activity is roamed from a display with a large resolution (e.g., 1900×1600) to one with a low resolution (e.g., 800×600), a significant portion of the activity’s application windows will potentially be left outside the visible area of the display. A related issue arose when clinicians asked for activity roaming between very large devices (e.g., the wall display in the team room) to very small devices (e.g., a PDA or a SmartPhone). In principle, the ABC framework can run on a PDA or a Java-enabled SmartPhone using the J2ME edition. The real challenge, however, is to investigate further what it actually means to roam an activity between two such very different types of devices—especially if we take into consideration that the clinicians saw the small devices as tools for more specific actions within the overall activity. One possible approach may be to support roaming a subpart of an activity to a small device, instead of roaming the whole activity.
 	}
 \end{quotation}
 
@@ -74,11 +73,26 @@ What is really interesting here is that it appears that the same kind of UI is i
 
 \begin{quotation}
 	\emph{
-		[\ldots]—--especially if we take into consideration that the clinicians saw the small devices as tools for more specific actions within the overall activity
+		[\ldots]—especially if we take into consideration that the clinicians saw the small devices as tools for more specific actions within the overall activity
 	} 
 \end{quotation}
 
 So in order to fully make use of activity adaptation, it is important to recognize that each family of devices is different, and should be treated as such, and that their usage is also different. One would probably not replace a wall display with an iPad and hope to achieve the same thing. This is important to keep in mind when designing the UI of the client on the iPad, in order to support activity adaptation properly.
 
 \section{ABC Framework}
+In the following, the infrastructure that will be used to store activities will be described in more detail.
+\par\vspace{\baselineskip}
+The part of the infrastructure that will be used particularly in this project, is the RESTful API. REST, or representational state transfer, is a web architecture that handles transfer of resource states. A resource can be any meaningful encapsulation of data that allows for a client to make request to a server, when data needs to be changed to a new state. Just like when a user is browsing a website, and everytime a new section of the site is visited the state changes by issuing a request and update the local data according to the response. The data itself will be described using a internet media type. In this case the media type is JSON.
 
+\begin{figure}[!htbp]
+  \centering
+    \includegraphics[scale=0.8]{architectureCloud}
+  \caption{\emph{Illustration of the ABC infrastructure}}
+  \label{fig:infrastructure}
+\end{figure}
+
+\par\vspace{\baselineskip}
+Figure \ref{fig:infrastructure} shows a graphical representation of the RESTful service.
+The way the service works is by receiving request from a client through the RESTful service. These requests is then received by \emph{Activity Access} which maps the request to an internal function. That function is called on the \emph{Activity Manager}, which looks at the HTTP header of the initial response, to determine what to do with the JSON data. The JSON data is then mapped to an \emph{Activity} object. Based on this Activity object, an \emph{Activity Wrapper} is produced which is placed in the \emph{Data Table(DT)}, and the activity object itself is serialized and placed as a \emph{Binary Large Object (Blop)}, on the service.
+
+So for example when a GET request is issued by a client, the Activity Manger will lookup the Activity Wrapper in the Data Table, to find out where the Activity object is placed and then deserialize it and map it to JSON data and finally send it back as a response.
