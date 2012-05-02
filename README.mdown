@@ -57,14 +57,38 @@ A professor got a day full of meetings at the University. In the beginning of th
 **Scenario 1:**
 A student receives a call from a fellow student, and ask if they can meet up in 10 minutes. The fellow student also ask to bring their solution to the latest homework assignment, as well as the reading material from the course base. He ask this because the lecture later in the day have been cancelled due to illness, and it is not possible to move it to another day.
 
-*Goal*: Use of categories, creation of activity, deleting activity, adding resources.
-
 **Scenario 2:**
 A professor writes to his students that he no longer will be using the course website that they have been using so far. All course material have been moved to a new website, where they can be assesed. One of the student had just saved all the old materials, and have to remove them, and add them for the new course website instead.
 
-*Goal*: Adding and removing resources.
-
 **Scenario 3:**
-A professer receives an e-mail that some of his student would like to meet up and discuss last week exercises and their sugested solutions. They have uploaded all their file to a public folder online, and have sent him the URL for this folder, and want to discuss all the materials individually there.
+A professer receives an e-mail that some of his student would like to meet up and discuss last week exercises and their sugested solutions. They have uploaded all their files to a public folder online, and have sent him the URL for this folder, and want to discuss all the materials individually there.
 
-*Goal*: Use of categories, creation of activity, deleting activity, adding resources.
+## Evaluation
+
+### Setup
+The user will be placed at a table in order to prepare the activities. Initially the application will show several different "dummy" activities that are real examples of existing activities. Examples of what appear initially are "Conference : Human Computer Interaction", "Meeting : Project Group", "Exercise Java 7" and "Lecture : Databases". Initially the user will be given an introduction to the system as well as its features. After that the user will receive oral tasks to complete on their own. The user will be asked to complete scenario 1 first at a fixed location, and afterwards answer a brief questionnaire. Afterwards the user will be asked to move around while completing scenario 2, based on oral tasks that the user will complete on their own. Afterwards the user will complete a short questionnaire, and the entire session will end with a short interview based on their answers on the two questionnaires.
+
+### Scenario 1 - Activity creation.
+A student have a busy day tomorrow at the University. In the morning the student have to do a presentation in an Auditorium, which involves a PDF presentation, document notes and some sample websites. After the presentation the student have a meeting with his supervisor regarding a school project he is doing at the supervisors office. They will discuss several designs of a product the student is developing, and involves meeting notes, some online resources and several images of the design. Later that day the student need to attend a lecture on an interesting subject which requires him to have access to the lecture slides, the exercises presented, and a note document. This will take place in a small teaching room. At the end of the day the student will be attending workshop on innovation. This will include a website, and a sketch of a brilliant idea that the student would like som feedback on. The location for this activity have not been dertermined yet.
+
+**Walkthrough**
+[1]: Create an activity, by pressing the [+] button in the top right of the activity overview, with the name of the activity (Lecture on thesis paper), the category P (brown) and the location 2C. Add the PDF-file presentation.pdf and document notes.doc from the dropbox folder by pressing the [+] sign in the upper right corner, giving them a name, and a proper category (pdf, document), and the URLS: AQO.net, libertine-libertine.com and norseprojects.com, by accessing them in the webbrowser, and just press save in the lower left corner, and give them the category html page.
+
+[2]: Create an activity, by pressing the [+] button in the top right of the activity overview, with the name of the activity (Project meeting), the category M (red) and the location 4C. Add the document meeting_notes.doc from the dropbox and all the design images from the local image library folder by pressing the [+] sign in the upper right corner, giving them a name, and a proper category (document, image), and the URLS: developer.apple.com and ui-patterns.com, by accessing them in the webbrowser, and just press save, and give them the category html page.
+
+[3]: Create an activity, by pressing the [+] button in the top right of the activity overview, with the name of the activity (Lecture BPRD), the category L (blue) and the location 4A. Add the document slides.pdf and exercises.pdf from the dropbox folder by pressing the [+] sign in the upper right corner, giving them a name, and a proper category (pdf), and the URL to a google document by accessing it in the webbrowser and adding it through the save button in the lower right corner.
+
+[4]: Create an activity, by pressing the [+] button in the top right of the activity overview, with the name of the activity (Workshop Innovation), the category W (cyan). No location will be added. Add the image sketch.png from the dropbox folder by pressing the [+] sign in the upper right corner, giving it a name, and a proper category (image), and the URL to itu-innovators.dk by accessing it in the webbrowser and adding it through the save button in the lower right corner.
+
+### Scenario 2 - Mobility and filtering
+
+The day have come to carry out yesterdays preparations. The student will begin by going to 2C to do his presentation using the resources prepared yesterday. He will give the presentation and proceed to the meeting with his supervisor in 4C. He have a very fruitfull meeting, and are able to present all of his designs and ideas. They had a long discussion and a lot of drawings on the whiteboard, and the student desides to take a picture and add to the activity. After a short break he moves on to attend his lecture in 4A. During the lecture he takes important notes, and feels refreshed by all the new things he have learned. He also finds a good tutorial online that he adds to his lecture activity. Last but not least he meets up with the other innovators, and they move around the university and find a suitable and available room. He finishes the workshop and head home.
+
+**Walkthrough**
+[1]: Have location filtering turned on and move to 2C. Of all the activities available only one should now be visible for easy access.
+
+[2]: Have location filtering turned on and move to 4C. Of all the activities available only one should now be visible for easy access. Take a picture with the camera of a whiteboard and add it to the activity.
+
+[3]: Have location filtering turned on and move to 4A. Of all the activities available only one should now be visible for easy access. Go to the msdn.com and add it to the activity.
+
+[4]: Have location filtering turned off and move to 3D. Turn category filtering on for workshop. Only one should be visible for easy access.
