@@ -1,9 +1,9 @@
 \chapter{Activity Based Computing}
 
-In this chapter we will explain the activity-based paradigm further explained. We will explain why adaptation and awareness is important, and introduce two frameworks that will help us create an activity based client.
+In this chapter we will further explain the activity-based paradigm. We will explain why adaptation and awareness is important, and introduce the activity based computing framework that will help us create an activity based client.
 
 \section{Background}
-As explained in the introduction, activity based computing is a new computer paradigm that moves focus from application based computer interaction into a higher level computational support for human activities. The paradigm has its outset in clinical work on hospitals, and seeks to aggregate resources to activities, instead of specific applications. An example of such an activity could be the development of our proof of concept. Opening an activity will cause the relevant services and resources to become available to the user, and allow to user to more easily switch between activities and all their associated services and resources. Figure \ref{fig:activitychart} shows an example of the activity "Proof-of-concept development", its associated services and their resources.
+Activity based computing is a computer paradigm that moves focus from application based computer interaction into a higher level computational support for human activities. The paradigm has its outset in clinical work on hospitals, and seeks to aggregate resources to activities, instead of specific applications. An example of such an activity could be the development of our proof of concept. Opening an activity will cause the relevant services and resources to become available to the user, and allow to user to more easily switch between activities and all their associated services and resources. Figure \ref{fig:activitychart} shows an example of the activity "Proof-of-concept development", its associated services and their resources.
 
 \begin{figure}[h!]
   \centering
@@ -49,18 +49,18 @@ A professor got a day full of meetings at the University. In the beginning of th
 
 This is a thought scenario but it clearly illustrates two things: first of all there is a need to aggregate resources to certain activities during the day for easy access, and second he only need certain activities at certain locations.
 
-The first issue can be handled by using the activity based paradigm as explained earlier, in order to encapsulate resources with different activities. Now the second issue can be handled by filtering the available activities based on where the user is. Now in this case, only four activities have been mentioned but there might be many more than those. There might be activities planned for the rest of the week, and there might even be activities that are not work related. This could potentially sum up to quite a lot of activities and most of them are only relevant when you are in a specific location.
+The first issue can be handled by using the activity based paradigm as explained earlier, in order to encapsulate resources with different activities. Now the second issue can be handled by filtering the available activities based on where the user is as illustrated in figure \ref{fig:locationmovement}. Now in this case, only four activities have been mentioned but there might be many more than those. There might be activities planned for the rest of the week, and there might even be activities that are not work related. This could potentially sum up to quite a lot of activities and most of them are only relevant when you are in a specific location.
 
-This is where the principle of activity awareness becomes important. Many wireless technologies exists today, which enables devices to communicate with their surroundings, and using these technologies it would be possible for a device to find out about its current whereabouts.
+This is where the principle of activity awareness becomes important. Many wireless technologies exists today \citet{wirelessWiki}, which enables devices to communicate with nodes placed in a building. Using these technologies a device can communicate with these wireless nodes, and get information on its current whereabouts.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[scale=0.5]{Moving}
+    \includegraphics[scale=0.6]{Moving}
   \caption{\emph{Illustration on how the professor moves between locations in order to carry out his activities}}
   \label{fig:locationmovement}
 \end{figure}
 
-With current wireless technologies one could use some kind of antennas in different locations and relate those to certain activities. In this way the device could communicate with these antennas and ask where it is right now and based on the activity relations, only show the activities that takes place in this location. We can specify this kind of filtering as \emph{location filtering}. Location filtering is thus a concrete way of handling activity awareness.
+By using this information it is possible to keep an activity relation with specific locations in a building, and only show the activities that takes place in a given location. We can specify this kind of filtering as \emph{location filtering}. Location filtering is thus a concrete way of handling activity awareness.
 
 With regards to activity adaptation it is interesting to consider the result of the evaluation from \citet{bardram2009}:
 \begin{quotation}
@@ -80,19 +80,25 @@ What is really interesting here is that it appears that the same kind of UI is i
 So in order to fully make use of activity adaptation, it is important to recognize that each family of devices is different, and should be treated as such, and that their usage is also different. One would probably not replace a wall display with an iPad and hope to achieve the same thing. This is important to keep in mind when designing the UI of the client on the iPad, in order to support activity adaptation properly.
 
 \section{ABC Framework}
-In the following, the infrastructure that will be used to store activities will be described in more detail.
+In the following, a short historic overview of the ABC infrastructure will be provided, up to the current version, that is used in this project. The Activity Based Computing infrastructure is managemed by the Activity Research Team \citep{team2012}.
+
+\subsection{ABC infrastructure version 4 - Windows XP}
+
+\subsection{ABC infrastructure version 5 - AEXO}
+
+\subsection{ABC infrastructure version 6 - RESTful}
+
 \par\vspace{\baselineskip}
-The part of the infrastructure that will be used particularly in this project, is the RESTful API. REST, or representational state transfer, is a web architecture that handles transfer of resource states. A resource can be any meaningful encapsulation of data that allows for a client to make request to a server, when data needs to be changed to a new state. Just like when a user is browsing a website, and everytime a new section of the site is visited the state changes by issuing a request and update the local data according to the response. The data itself will be described using a internet media type. In this case the media type is JSON.
 
 \begin{figure}[!htbp]
   \centering
     \includegraphics[scale=0.8]{architectureCloud}
-  \caption{\emph{Illustration of the ABC infrastructure}}
+  \caption{\emph{Illustration of the ABC cloud infrastructure. At the buttom three examples on ABC clients connects to the cloud. Each client sends requests to the cloud service, which is then handled by the Activity Access and mapped to functions on the Activity Manager. Each request is then mapped to an activity object and an Activity Wrapper. The Activity Wrapper is stored on the Data Table, with info on where the serialized activity object is placed, such that it can be retrieved later.}}
   \label{fig:infrastructure}
 \end{figure}
 
 \par\vspace{\baselineskip}
-Figure \ref{fig:infrastructure} shows a graphical representation of the RESTful service.
-The way the service works is by receiving request from a client through the RESTful service. These requests is then received by \emph{Activity Access} which maps the request to an internal function. That function is called on the \emph{Activity Manager}, which looks at the HTTP header of the initial response, to determine what to do with the JSON data. The JSON data is then mapped to an \emph{Activity} object. Based on this Activity object, an \emph{Activity Wrapper} is produced which is placed in the \emph{Data Table(DT)}, and the activity object itself is serialized and placed as a \emph{Binary Large Object (Blop)}, on the service.
+%Figure \ref{fig:infrastructure} shows a graphical representation of the RESTful service.
+%The way the service works is by receiving request from a client through the RESTful service. These requests is then received by \emph{Activity Access} which maps the request to an internal function. That function is called on the \emph{Activity Manager}, which looks at the HTTP header of the initial response, to determine what to do with the JSON data. The JSON data is then mapped to an \emph{Activity} object. Based on this Activity object, an \emph{Activity Wrapper} is produced which is placed in the \emph{Data Table(DT)}, and the activity object itself is serialized and placed as a \emph{Binary Large Object (Blop)}, on the service.
 
-So for example when a GET request is issued by a client, the Activity Manger will lookup the Activity Wrapper in the Data Table, to find out where the Activity object is placed and then deserialize it and map it to JSON data and finally send it back as a response.
+%So for example when a GET request is issued by a client, the Activity Manger will lookup the Activity Wrapper in the Data Table, to find out where the Activity object is placed and then deserialize it and map it to JSON data and finally send it back as a response.
