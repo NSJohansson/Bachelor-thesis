@@ -1,1 +1,364 @@
 \chapter{Evaluation}
+In this chapter we will test and evaluate our proof of concept implementation. It will be tested and evaluated with regards to the ABC principles that we support as defined in chapter 1. The tests are conducted in order to answer the question: \emph{Is it possible to properly support the three ABC principles: Activity Centered, Activity Awareness and Activity Adaption on the iPad}.
+
+We will evaluate the system based on constructed real-world scenarios. We want the system to be able to perform and be useful to people that are normally operating at a university, such as students. We will therefore carry out functionality tests, in order to determine the usefulness of the core features that have been implemented as discussed in chapter 3.
+
+In the end we will discuss the results of the tests, and what improvement or changes should be considered for future work.
+
+\section{Evaluation of the proof of concept}
+\label{sec:evalutationPOC}
+
+\citet{ugur2001} defines six steps as a guideline in order to properly carry out Human-Computer-Interaction tests:
+
+\begin{itemize}
+  \item Set the goals - \emph{What do you want to capture?}
+  \item Decide on the target population and sample size - \emph{Who will you ask?}
+  \item Determine the questions - \emph{What will you ask?}
+  \item Pre-test the survey - \emph{Test the questions}
+  \item Conduct the survey - \emph{Ask the questions}
+  \item Analyze the data collected - \emph{Produce the report}
+\end{itemize}
+
+We will use these guidelines as a basis for properly defining and carry out these tests. \citet{ugur2001} further describes surveys as either quantitative or qualitative. Through quantitative surveys it is possible to get statistical data, but does is not very qualitative, that is it is impossible to know why a user likes or dislikes something in particular. Qualitative surveys are better for getting elaborated answers, but is very hard to use for statistical data.
+
+Furthermore \citet{ugur2001} defines face-to-face interviews as the best solution for gathering qualitative data. As a solution we will therefore conduct a quantitative survey for each scenario that the user is asked to participate in, and then follow up on each of these surveys with a face-to-face interview, in order to determine why they answered the what they did. This way it is possible to gather data for statistical analysis, and also to get specific feedback for future improvements.
+
+\subsection{Setting the goals}
+As the main objective is to find out how we can support the ABC principles Activity Centered, Activity Awareness and Activity Adaptation, it is important to find out how useful the functionalities that we implemented to support these principles are from a user point of view. If some of the features implemented turn out to not be very desireble, one could conclude that either it is not possible to support the affected principles, or that one need to rethink how to support it. It is therefore important that we define scenarios that the user will go through, in order to simulate a real-world university situation, so that the test users will be able to better perceive the usefulness of the implemented functionalities.
+To summarize we define the goal of this test to dertermine the usefulness of the implemented features that support the Activity Centered, Activity Awareness and Activity Adaptation principles
+
+\subsection{Deciding on the target population and sample size}
+Since the proof of concept have been developed with a university environment in mind, it would be most suitable to bring in test users that are normally working at a university. We further narrow the test users down to be students. As testers we are very familiar with the student environment, and would be able to come up with a realistic real world scenario in which our application could be used. It would also be a lot easier for students to imagine the scenarios that we want them to complete, and also be easier for them to assert the value of the implemented functionalities. It would be interesting to bring in students with the same academic background as ourselves, but also students from other universities, in order to determine if our proof of concept would be feasible in more than one university. It is decided to use 7-8 test persons to carry out this test.
+
+\subsection{Determining the questions}
+It is possible to divide the questions into three categories: activities and resources, filtering and integration. Furthermore the questions will be formulated as statements, which the test user will scale, based on how much they agree with that statement, in order to get a quantitative measure. Each question will be measures on a scale from 1 to 5, where 1 means that the user strongly disagrees, and 5 means that the user strongly agrees.
+Each of the question categories will be further elaborated in the following.
+
+\subsubsection{Activities and Resources}
+The core concept of the proof of concept implementation is that we are able to support the notion of activities. An important functionality of the implementation is this that it should be possible to easility create these activities, but it is equally important how these are presented to the user in order for users to fully utilize activities. Another core concept of activities is the aggregation of resources. Resources, like activities, also have to be presented properly to the user, such that they are easilily accessible. 
+
+We therefore define these questions:
+
+\begin{description}
+
+  \item[It is easy to create an activity.] We want to find out if the proof of concept easily support the creation of activities. 
+  
+  \item[The system gives a good overview of created activities.] We want to find out if the proof of concept visualize activities in a logical and usable way. 
+  
+  \item[I like the use of categories.] We want to determine if the use of categories makes it easier to manage and handle activities.
+  
+  \item[I like the use of color coding.] We want to determine if the use of color coding makes certain categories and certain activities easier to see.
+  
+  \item[The system gives a good overview of resources for a given activity.] Like activities we want to know if resources are presented and visualized in a logical and usable way, but also to find out if these two concept should be handled differently, instead of similarly.
+  
+  \item[The ability to easily save a website that you are visiting is useful.] We wish to know if users want to be able to quickly add a website they are visiting, instead of just writing the URL directly into a dialog box.
+  
+  \item[I had all features available in order to easily complete the tasks.] This question might seem like a more usability minded question, but the intend is to force the user to think about if some core functionality is missing, in order for them to better handle the scenario that they are asked to complete.
+  
+\end{description}
+
+\subsubsection{Filtering}
+A very important part of the proof of concept is the use of location filtering, and it is therefore very important to get user feedback on how this works, and how useful they think it is. Furthermore we implemented the notion of categories, and also a filtering option based on this. An interesting result is also to see which of these filtering methods is perceived as the most useful.
+
+We therefore define these questions:
+
+\begin{description}
+  \item[I find the category filtering useful.] We want to get feedback whether or not this kind of filtering is perceived as useful. 
+  
+  \item[I find the location filtering useful.] We want to get feedback whether or not this kind of filtering is perceived as useful. This is particularly important since the ABC paradigm defines Activity Awareness as a core concept, where activities are able to adapt based on its environment, and the result of this question could determine if this is a valid concept to use on the iPad.
+\end{description}
+
+\subsubsection{Integration}
+Integration was done based on the paper that involved integrating ABC into a desktop environment. As discussed in chapter 3, it was important to integrate the proof of concept as much as possible into the existing operating system, but also by using cloud services, and provide an interface that worked as the basic interaction with the device as a whole. We therefore want to find out how desired and useful the implemented solutions are.
+
+We therefore define these questions:
+
+\begin{description}
+
+  \item[The ability to add resources from dropbox, image library and the camera is useful.] Since we integrated three external systems that handles files, from which resources could be added, it is interesting to find out if this is a good solution for retrieving resources.
+  
+  \item[I find the all-time access to the browser useful.] It was decided that the a browser should make up most of the UI space, and it would be interesting to find out if this a desired solution, or if it should be hidden until needed.
+  
+  \item[I find the integration with native apps useful.] Last but not least, it is interesting to determine if integration with local apps is a desired and usable feature.
+  
+\end{description}
+
+\section{The Setup}
+As explained earlier, we wanted the users to participate by doing real world scenarios. The scenarios should be constructed such that they support the questions defined in section \ref{sec:evalutationPOC}.
+
+We came up with two scenarios: one that focuses on creating and managing activities and resources, as well as some of the integration solutions, and one that focuses on filtering and making use of local applications. Both scenarios will take place at the IT-University of Copenhagen.
+
+The two scenarios are as follow:
+\par\vspace{\baselineskip}
+
+\textbf{Scenario 1}
+\begin{quotation}
+\emph{
+A student have a busy day tomorrow at the University. In the morning the student have to do a presentation in an Auditorium, which involves a PDF presentation, document notes and some sample websites. After the presentation the student have a meeting with his supervisor regarding a school project he is doing at the supervisors office. They will discuss several designs of a product the student is developing, and involves meeting notes, some online resources and several images of the design. Later that day the student need to attend a lecture on an interesting subject which requires him to have access to the lecture slides, the exercises presented, and a note document. This will take place in a small teaching room. At the end of the day the student will be attending workshop on innovation. This will include a website, and a sketch of a brilliant idea that the student would like som feedback on. The location for this activity have not been dertermined yet.
+}
+\end{quotation}
+
+\textbf{Scenario 2}
+\begin{quotation}
+\emph{
+The day have come to carry out yesterdays preparations. The student will begin by going to 2C to do his presentation using the resources prepared yesterday. In the break during his presentation he wants to look through the rest of the presentation on in the local iBooks application. He finishes up his presentation and proceed to the meeting with his supervisor in 4C. He have a very fruitfull meeting, and are able to present all of his designs and ideas. They had a long discussion and a lot of drawings on the whiteboard, and the student desides to take a picture and add it to the activity. He also wants to add some comments to his notes, and opens up his note-PDF in the local GoodReader application. After a short break he moves on to attend his lecture in 4E. During the lecture he takes important notes, and feels refreshed by all the new things he have learned. He also finds a good tutorial online that he adds to his lecture activity. Last but not least he meets up with the other innovators, and they move around the university and find a suitable and available room. He finishes the workshop and head home.
+}
+\end{quotation}
+
+Each survey will be organized as follow:
+\par\vspace{\baselineskip}
+\textbf{Survey - Scenario 1}
+\begin{itemize}
+	\item It is easy to create an activity.
+	\item The system gives a good overview of created activities.
+	\item The system gives a good overview of resources for a given activity.
+	\item The ability to easily save a website that you are visiting is useful.
+	\item The ability to add resources from dropbox, image library and the camera is useful.
+	\item I find the all-time access to the browser useful.
+	\item I had all features available in order to easily complete the tasks.
+\end{itemize}
+
+\textbf{Survey - Scenario 2}
+\begin{itemize}
+	\item I like the use of categories.
+	\item I like the use of color coding.
+	\item I find the category filtering useful.
+	\item I find the location filtering useful.
+	\item I find the integration with native apps useful.
+\end{itemize}
+
+Initially it was necessary to create a known environment of activities in the application, from which the test user could familiarize themselves. It is also necessary to have more than the four activities that the test users are required to create during the first scenario. A student at a university would probably have at least two or three times that amount, to account for lectures, meetings, exercises and so on. It would also help to further emphazise if location and category filtering would be used, and the usefulness of color coding and category assignment for an activity. The example activities that are created prior to each test is shown in figure \ref{fig:initial}.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.35]{startStateTest}
+  \caption{\emph{The inital setup for a user. To the left are shown the example activities, with their category and color coding attached. To the right is the initial state of the browser.}}
+  \label{fig:initial}
+\end{figure}
+
+\subsection{Walkthrough}
+One of the steps defined by \citet{ugur2001} is that the testers should perform the test before performing the tests on the users themselves. Such a pre-test was conducted and in the following a sample walkthrough is provided.
+
+\par\vspace{\baselineskip}
+
+\textbf{Scenario 1}
+\begin{itemize}
+\item Create an activity, by pressing the plus button in the top right of the activity overview, with the name of the activity (Lecture on thesis paper), the category P (brown) and the location 2C. Add the PDF-file presentation. pdf and document presentation\_notes. doc from the dropbox folder by pressing the plus sign in the upper right corner, giving them a name, and a proper category (pdf, document), and the URLS: AQO.net and norseprojects.com, by accessing them in the webbrowser, and just press save in the lower right corner, and give them the category html page.
+\item Create an activity, by pressing the plus button in the top right of the activity overview, with the name of the activity (Project meeting), the category M (red) and the location 4C. Add the document meeting\_notes.pdf from the dropbox and all the design images from the local image library folder by pressing the plus sign in the upper right corner, giving them a name, and a proper category (document, image), and the URLS: developer.apple.com and ui-patterns.com, by accessing them in the webbrowser, and just press save, and give them the category html page.
+\item Create an activity, by pressing the plus button in the top right of the activity overview, with the name of the activity (Lecture SIGB), the category L (green) and the location 4E. Add the document slides.pdf and exercises.pdf from the dropbox folder by pressing the plus sign in the upper right corner, giving them a name, and a proper category (pdf), and the URL to a google document by accessing docs.google.com in the webbrowser and adding it through the save button in the lower right corner.
+\item Create an activity, by pressing the plus button in the top right of the activity overview, with the name of the activity (Workshop Innovation), the category W (cyan). No location will be added. Add the image sketch.jpg from the dropbox folder by pressing the plus sign in the upper right corner, giving it a name, and a proper category (image), and the URL to itu-innovators.dk by accessing it in the webbrowser and adding it through the save button in the lower right corner.
+\end{itemize}
+
+\textbf{Scenario 2}
+
+\begin{enumerate}
+\item Have location filtering turned on and move to 2C. Of all the activities available only one should now be visible for easy access. He should download the presentation.pdf by holding down his finger on the resource, and then open it in iBooks from the popup window.
+\item Have location filtering turned on and move to 4C. Of all the activities available only one should now be visible for easy access. Take a picture with the camera (by pressing the plus button, provide an image name and choose camera) of a whiteboard and add it to the activity.
+\item Have location filtering turned on and move to 4E. Of all the activities available only one should now be visible for easy access. Go to the msdn.com and add it to the activity. He should download the meeting\_notes.pdf by holding down his finger on the resource, and then open in GoodReader from the popup window.
+\item Have location filtering turned off and move to 3D. Turn category filtering on for workshop. Only one should be visible for easy access.
+\end{enumerate}
+
+\section{Results}
+The tests were carried out using 8 users. All 8 users completed both scenarios, and all 8 users filled out both questionaires, and participated in a face-to-face interview after completing the surveys.
+
+\subsection{Quantitative Results - Survey}
+
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{ | p{7cm} | c |}
+    \hline
+    \textbf{Question} & \textbf{Avg score} \\ \hline
+    	It is easy to create an activity. & 4.4 \\ \hline
+		The system gives a good overview of created activities. & 3.9 \\ \hline
+		The system gives a good overview of resources for a given activity. & 4.5 \\ \hline
+		The ability to easily save a website that you are visiting is useful. & 4.8 \\ \hline
+		The ability to add resources from Dropbox, image library and the camera is useful. & 4.9 \\ \hline
+		I find the all-time access to the browser useful. & 4.1 \\ \hline
+		I had all features available in order to easily complete the tasks. & 3.9 \\ \hline
+		I like the use of categories. & 4.0 \\ \hline
+		I like the use of color coding. & 4.1 \\ \hline
+		I find the category filtering useful. & 4.4 \\ \hline
+		I find the location filtering useful. & 4.4 \\ \hline
+		I find the integration with native apps useful. & 4.9 \\ \hline
+	\end{tabular}
+\end{center}
+\caption{The avg. result for each of the survey questions, based on the answer of 8 users. 1 is the lowest possible score and 5 is the highest possible score}
+\label{table:quantitativeResult}
+\end{table}
+
+In generel most of the features are found useful by the users.
+
+As can be seen from the results of the survey, the test users were very fond of especially three features; Integration with native applications, the ability to add resources from Dropbox, image library and camera, and the ability to easily save a website that you are using. The features that scored the least were the overview of created activities and if the user had all features available in order to easily complete the tasks. Based on these results it is especially interesting that the overview of activities scored lower than the overview of resources. One of the core functionalities, location tracking scored rather high, but not as high as some other features. Following these results it is now interesting to consider the feedback from the users, on why they scored the different features the way they did.
+
+\subsection{Qualitative Results - Interview}
+The interviews were carried out as semi-structured interviews, as explained in \citet{ugur2001}. The surveys were the basis for the interview, but the interview allowed the users to also talk freely about topics that were not necessearily mentioned in the survey. In the following some of the user feedback will be presented.
+
+\subsubsection{Activity Overview and Resource Overview}
+\label{sec:resultActivity}
+These two solutions turned out of be scored rather differently. It is therefore rather interestingly to find out why.
+If we start to look at what made the activity overview work well we got the following responses.
+
+\begin{quotation}
+	\emph{
+		- I really like the use of color coding and categories in the overview - it makes the overview better in an unsorted list [...]
+	}
+\end{quotation}
+
+\begin{quotation}
+	\emph{
+		- I like that all the activities are gathered in one place, and that you do not have to do too much to go through all of them.
+	}
+\end{quotation}
+
+\begin{quotation}
+	\emph{
+		- Colors and categories are very nice, and gives and easy overview of what kind of activities you have to do.
+	}
+\end{quotation}
+
+This shows that two things improves the overview of the list: Having all activities gathered in one place, and that colors and categories made it easier to get an overview. But when one looks a the critiques of the overview the color coding and categories are both mentioned:
+
+\begin{quotation}
+	\emph{
+		- Activies are hard to get an overview of, because there are too many unfamiliar colors and categories.
+	}
+\end{quotation}
+
+\begin{quotation}
+	\emph{
+		- Overview is confusing. Would be nice to with some sort of sorting, or if it would be possible to define the colors and categories herself. Really likes the concept of color coding and categories though.
+	}
+\end{quotation}
+
+\begin{quotation}
+	\emph{
+		- Would be better if you could define your own colors and categories, that you find most familiar.
+	}
+\end{quotation}
+
+\begin{quotation}
+	\emph{
+		- The overview makes more sense for resources, since the list is probably shorter.
+	}
+\end{quotation}
+
+\begin{quotation}
+	\emph{
+		- It does not seem possible to get the location information for an activity. What if you forgot where to go?
+	}
+\end{quotation}
+
+The critique is mainly based on the fact that a: there is no possible sorting available. All categories are just shown randomly, and one can only improve this by using category filtering and location filtering, and b: it is hard to get an overview of colors and categories that you are not used to. This critique also reveals though that one could probably improve the overview a lot by a: providing options of sorting the list of activities without using filtering, b: make it possible for users to create their own activities and c: display the location for each activity.
+
+For resources the following seemed to be the reason why it scored higher:
+
+\begin{quotation}
+	\emph{
+		- I really like that the system suggest what I can do in the room that I am in right now. Then I don't need to think about it.
+	}
+\end{quotation}
+
+\begin{quotation}
+	\emph{
+		- Resources works better since there are fewer categories, and the images are well known.
+	}
+\end{quotation}
+
+\begin{quotation}
+	\emph{
+		- Resources are easier to identify, because the categories and its associated image is more well known.
+	}
+\end{quotation}
+
+This shows why resources worked better than activities. It is perceived that each activity, would probably not have as many resources in a list, as one would have activities. Furthermore the amount of categories, as well at the images used for these appeared easier to familiarize with.
+
+\subsubsection{Location Tracking}
+This concept was very important to get feedback on, and in the surveys the feature itself was scored 4.4 out of 5. The location filtering were mostly described as a nice feature, and it made it possible for the user to basically not think about filtering on their own - the application did it for them as described by three of the users:
+
+\begin{quotation}
+	\emph{
+		- I really like that the system suggest what I can do in the room that I am in right now. Then I don't need to think about it.
+	}
+\end{quotation}
+
+\begin{quotation}
+	\emph{
+		- The location filtering really help to improve the lack of sorting. Suddenly you are only shown a couple of activities instead of a whole list.
+	}
+\end{quotation}
+
+\begin{quotation}
+	\emph{
+		- Location tracking in a university looks like it have great potential based on this solution.
+	}
+\end{quotation}
+
+These statements proves that; location filterings helps on the lack of sorting posibilities (which was addressed in \ref{sec:resultActivity}), and that it enables to user to use less cognitive function in order to find a specific activity, and is perceived as a very feasible solution. Now when looking at the critique of location filtering, it is not so much that location does not seem feasible, but that it should be extended:
+
+\begin{quotation}
+	\emph{
+		- It would be nice if it was possible to use location filtering like category filtering, such that you don't have to necessarily move to a location to utilize it.
+	}
+\end{quotation}
+
+Which means that not only should the solution be able to do this while moving around, but it should also be possible to utilize without actually being at the specified locations.
+
+\subsubsection{Integration}
+Integration with 3rd party services and applications was another major topic to be tested, and to find out if such a general feature were desirable. The feature regarding both integration with native apps, as well as the integration with Dropbox, image library and the camera scored the highest of all questions, and was very close to a perfect score for both. This also means that there were almost no critique but a lot of positive feedback:
+
+	\begin{quotation}
+		\emph{
+			- Integration wit dropbox is very nice. I rarely use any applications on the iPad that does not have Dropbox support, since i got all my work related files there.
+		}
+	\end{quotation}
+
+	\begin{quotation}
+		\emph{
+			- We often conduct biological experiments, which we document by taking pictures of the setup, so the integration with the camera is a very useful feature, since it make it possible to add it directly to your activity.
+		}
+	\end{quotation}
+	
+	\begin{quotation}
+		\emph{
+			- In design projects one usually use a lot of images from your computer or camera, so being able to add images from the local image library is a very nice feature.
+		}
+	\end{quotation}
+	
+	\begin{quotation}
+		\emph{
+			- I really like the integration with the local applications. I simply hate when I am not able to use my favorite programs for what I need to do.
+		}
+	\end{quotation}
+	
+These results emphazises how important it is to bring in known programs, that the users are used to. It also shows that the integrated were heavily used by students. Only one of the students did not use Dropbox on a daily basis, but used camera and images a lot instead. There were a single suggestion on how to improve the integration though:
+
+	\begin{quotation}
+		\emph{
+			- It would be cool if the integration could work both ways. Right now it is possible to open resources in 3rd party programs, but not add files from 3rd party programs to your activity.
+		}
+	\end{quotation}
+	
+Another integration was the access to the browser directly from our proof of concept. It did not score as good as the other integration solutions. It was generally stated that it was nice to have access to a browser directly, and that it did not require one to keep tabbing back and forth between out solution and the standard browser as well as most activities required one to access online resources, but the critiques were that it did not always have to be visible, but could be hidden until the use of the browser were needed, and then could be brought up. Others also argued that it did not really make any difference whether the browser were directly integration into the application. But at the same time those users also really liked the feature that one could save a visited site directly into an activity.
+
+\section{Suggestions for future improvements}
+The survey question \emph{I had all features available in order to easily complete the tasks}, made it possible for the users during the interview to speak freely of what they thought would improve the use of the system. In the following we will therefore present some of the most notable, as well as most mentioned improvement for future work.
+
+\subsubsection{Calendar}
+Several of the users stated that they really missed an option to declare a date, and a time of the day of an activity. They mentioned that when one is at a university, it is usually only relevant to see what activities will happen today, and not tomorrow. Several of the users also expressed a concern with the current solution because they did not think that they would ever delete completed activities, and over time that would eventually involve having quite a lot of activities present in the activity overview. Having activities support time scheduling, would also make it possible to have the proof of concept work like an advanced calendar. One user even suggested that all appointments in the local calendar program on the iPad would automatically be retrieved an created as activities, that you could add resoruces to.
+
+\subsubsection{Metadata}
+In correlation with location filtering but also the above mentioned calendar feature, it should be possible to easily see this information for an activity. Many users complained that it was not possible to access this information, after an activity was completed. They were especially concerned with the fact that they might forget where an activity takes place, and then there would be no way through the proof of concept solution to find out.
+
+\subsubsection{Editing}
+It became clear very quickly that the lack of editing would have a negative impact on the user evaluation. We had not thought about this during evaluation, but we decided to complete the user test without chaning this. As was clear during the evaluation users were generally very quick to click their way throught he creation screens for both activity and resources, and often they wanted to change something they had already creation. Due to the lack of editing they were forced to delete what they had just created, and create the same thing anew witht the new changes. This caused a lot of frustration and should therefore be implemented. But another and even stronger argument was presented by one of the users:
+
+\begin{quotation}
+	\emph{
+		- At my school there are a lot of problems with getting enough room for all the lectures, which result in lectures being moved around all the time, and its a big handicap if it is not possible to change the location on an activity that you have already created.
+	}
+\end{quotation}
+
+The possibility to edit activities as well as resources should there be implemented in order to support such situations.
+
+\subsubsection{Sorting}
+The major point of critique of the activity overview, is that it lack sortings capabilities. Many users perceived location tracking a good solution to improve this, but that would not help if you were in a situation where you could not rely on this. Users specifically asked for the option to sort on name, time of day, date, collated categories (all meetings stand next to each other, all lectures stand next to each other and so on) or creation time (newest first). Users had the option to filter based on categories, but only found this useful if one had quite a lot of activities to filter on. In you just had a the current list full it would probably not be use as sorting would be more appropriate.
