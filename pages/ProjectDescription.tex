@@ -1,51 +1,48 @@
 \chapter{Introduction}
+In this chapter, we will introduce the bachelor thesis and explain it's relevance. We will introduce the concept of Activity Based Computing and provide enough background information for the uninformed reader to understand it's purpose. At the same time, we will state an exact problem definition, explain how we approached it and briefly summarise the results. An extensive explanation of Activity Based Computing and the results of the thesis is deferred to subsequent chapters.
 
-\section{Context}
-In modern times, work practices are often complex entities with respect to the number of resources and work flows involved. The seemingly simple task of doing a standard health check of a patient could easily involve e.g. a doctor, a nurse, a secretary and several documents including the patient record etc. Furthermore, the doctor’s office might not be a sufficient location to complete the task - the patient might need to accompany the nurse to the lab to have a blood sample taken, go back to the office to have the doctor test his eyes and initially the doctor might need to get the patients record from the secretary in the reception.
-Today, computers are heavily used as a tool for optimization when carrying out tasks like these. They solve single tasks on the lowest level like reading e-mails, looking up records in databases and filling out forms very efficiently thus leaving it up to the user to find out for each instance of a work flow which applications, files, documents etc. he needs to prepare to do his job. While this doesn’t render the tasks impossible to carry out, it implies some practical overhead in terms of time and mind capacity that moves attention of expert users from things that add value to their work to things that are less important.
+\section{Context and Motivation}
+Today, work practices are often complex entities with respect to the number of resources and work flows involved. Take for instance a university student who follows several courses at a time. Each course might include literature to read, lectures to attend and exercises to solve. In order for a student to get through an average day, he would need to keep track of his schedule to know which course is taught that day and he would have to solve the exercises which requires resources like the document that defines them, the course web page etc. Furthermore, if he has several lectures the same day or the lecture and the exercises are held in different rooms then he would need to keep track of this and prepare a different set of documents for each activity.
+
+As argued by Bardram in [The Activity-Based Computing Project] moving away from the typical office desk environment has a negative impact on the challenges that arise from management of parallel activities. Users are left with their own organizing skills for tools when trying to prepare and share their resources before the activity is actually happening. In modern times, computers in various shapes have been utilized to meet and optimize those challenges but they all still provide support on the lowest level only, i.e. allowing the user to browse the file system, open and close applications, manually distribute their documents to collaborators by e-mail etc.
+
+Activity Based Computing (ABC) is a new higher level paradigm originally developed for use with hospitals. It aims at aiding users in managing parallel activities at a higher level by introducing the notion of an "Activity" that acts as the basic computational unit and facilitates easy distribution, suspension and resumption.
+
+In this thesis we would like to investigate how the Apple iPad can be used as an ABC enabled device to aid university students in managing their daily activities. Earlier research within ABC [...] has concluded that tablets were less useful as ABC devices in hospital settings. We find investigations of the usefulness of the iPad in university settings interesting for 2 reasons. [1] University settings resemble hospital settings by being collaborative, non-office like and attached to multiple locations which imposes amplified activity management challenges as argued by Bardram. [2] The last couple of years, tablets have undergone an evolution which improves some of their properties that have earlier been subject to criticism in Bardram's research.
 
 \section{Background}
-Activity Based Computing is a new paradigm that changes the focus of traditional computing environments from low level tasks like e-mail checking or web browsing to a higher level abstraction in the shape of an activity like “Performing a health check”. An activity encapsulates all the smaller tasks and resources that are needed to complete it and provides a manageable unit that can be suspended and resumed, run in parallel with other activities and moved around while it adapts to the new surroundings.
-The ABC project started in 2003 with it’s outset in pervasive computing de- signed for mobile, collaborative and time critical work for clinicians in hospitals. Research on ABC is currently developed and maintained by the ABC research team led by Jakob E. Bardram [1] and is financially funded by The Danish Council for Strategic Research [1]. The research team has developed five versions of the ABC framework, and is currently working on a sixth version. The ABC framework implements services for handling activities and resources. The fifth version in use is a Java based peer-to-peer based on the Aexo infrastructure and is targeted for non-PC devices [1]. The ABC framework will be described in more detail in chapter 2.
+The ABC project started in 2002 and took it's outset in pervasive computing designed for mobile, collaborative and time critical work for clinicians in hospitals. Since 2002 a lot of experiments have been carried out with different families of devices as well as technical implementations at different software levels. The current implementation is a java peer-to-peer system that is based on the AEXO infrastructure and targeted for non-PC devices.
 
-\section{Motivation}
-With the introduction of touch screen tablet PCs on the market back in 2001 [3], a new family of devices with yet another screen size and touch screen performance matured. Even though the concept of a tablet PC is not a new one, tablets have since 2001 undergone major changes in the sense that they have become common and they have gotten more interactive user interfaces due to improved touch functionality. \citet{bardram2011} argues that: “Once you move away from the desktop and into a non-office-like environment such as a hospital, the challenges arising from the management of parallel activities and interruption are amplified because multi-tasking is now combined with a high degree of mobility [...]”
-Given the challenges of mobile work environments, the recent improvement of tablet computers and the fact that the experimentation with iOS as a technically well-suited operating system within ABC has not previously been explored, we will implement an iOS ABC client for the Apple iPad.
+Devices that have been used in ABC includes desktops, laptops, tablets and wall screen displays. Tablets have received a lot of criticism due to their size and weight which made them difficult to handle in front of patients. In [..] by Bardram, it is even explained how nurses were forced to drop the device in the patient's lap in order to interact properly with it.
+
+Despite the fact that ABC was designed for use in hospitals it is introduced as a paradigm for ubiquitous computing that has fostered 6 general principles (which we will elaborate on in chapter 2) and these can be applied in any context. Lately, experiments with ABC has been carried out within the field of biology.
+
+The ABC research team is financially funded by the Danish Council for Strategic Research. The team is located at the IT University of Copenhagen and led by Jakob Bardram.
 
 \section{Goals}
-The purpose of the project is to develop an ABC client for the ABC framework running on the iOS platform with the following goals:
+The goal is to establish the ABC related usefulness of a modern tablet computer such as the Apple iPad in a university context. We will limit our investigation to include the following ABC principles
 
-\begin{description}
-  \item[Activity Centered] \hfill \\
-  It must to support the notion of activities.
-  \item[Activity Awareness] \hfill \\
-  It needs to able to adapt and adjust itself according to its location, mean- ing that the types of resources available and the UI representation is always dependent of the current working context.
-  \item[Activity Suspend and Resume] \hfill \\
-  It needs to able to save the state of one activity in order to restore and resume another previously suspended activity.
-  \item[Uniform UI] \hfill \\
-  It must have a uniform UI, meaning that whatever concrete kinds of dis- plays we choose to build these must be the same for any activity as long as the activities are resumed in the same location and under the same conditions.
-\end{description}
+\begin{itemize}
+  \item Activity-Centered
+  \item Activity Roaming
+  \item Activity Adaption
+  \item Activity Awareness
+\end{itemize}
 
-\section{Methods}
-The goals will be achieved through these methods
+\section{Approach}
+In order to achieve the above mentioned goals we will follow the approaches listed below
 
-\begin{description}
-  \item[Investigation - iOS] \hfill \\
-  We will investigate the iOS platform and discuss how we can apply the above mentioned goals. This will be done by following classes on iOS development and reading related articles on the subject.
+\begin{itemize}
+  \item \textbf{Investigation} \newline
+        We will study the research that has already been done on ABC within other domains and take the results that have relevance to a university context into consideration when defining the features of the app. We will also familiarize ourselves with the latest version of the iOS platform and learn Objective C.
+  \item \textbf{Implement a proof-of-concept solution} \newline
+        We will implement an iPad app to serve as a proof-of-concept solution. The app will serve as a client of the ABC framework developed by the ITU research team and implement the 6 ABC principles mentioned in the section above. The argument for this choice of principles is deferred to a later chapter.
+  \item \textbf{Evaluation} \newline
+        We will make user tests to establish the usefulness of our product and argue for the feasibility of our goals. We will define a set of user scenarios and have genuine users from the target domain carry them out. Next, we will record their feedback, share some thoughts of our own and present the results in the report in a readable format as a collective evaluation.
+\end{itemize}
 
-  \item[Investigation - Location tracking] \hfill \\
-We will investigate what hardware resources is available on the iPad, and discuss which is better for location tracking. We will then discuss how this can be connected to the result of the iOS investigation, and how it will support the ABC principle of activity-awareness.
-
-  \item[Implementation] \hfill \\
-  Based on the analysis and discussion of the important elements we will define a list of requirements and implement a client for iOS that supports these requirements. The client will make use of the ABC framework.
-  
-  \item[Evaluation] \hfill \\
-We will evaluate the implementation by defining user scenarios that emphasize the mobility challenge in a hospital environment, where a user needs to bring digital resources with them, and test persons complete the scenarios. Afterwards we will have the test persons fill out a questionnaire where they will rate and evaluate the implemented features. Finally we will analyze the results and suggest improvements to our solution.
-
-\end{description}
+\newpage
 
 \section{Results}
-TODO
-
-\section{Overview}
-TODO
+We developed an iPad app that supports the 4 principles we decided to focus on. We defined a set of features that we considered likely to contribute to the overall usefulness of the product and designed our user scenarios around those features. Next, we had users go through the scenarios and answer surveys with questions about the experience that could be rated on a scale from 1 to 5.
+The evaluation clearly showed that the majority of the users were happy with the product and felt that it would be of valuable use to them in their everyday work as students. The surveys also brought results to show that some features were clearly better than others. Equally important, most users didn't leave the room without suggestions to things that they thought should be improved or added to the solution. The feature that got the highest score of 4.9 (average) was the ability to open resources in other apps whereas the overview of activities were rated with 3.9 (average).
