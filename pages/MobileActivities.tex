@@ -1,11 +1,89 @@
 \chapter{Mobile Activities}
+In this chapter three topics will be addressed: Transition from desktop to tablet computers, local and cloud computing as well as location tracking. Each section will provide an overview of the problem regarding these topics, and a discussion on how to solve it. Each section will end with a summary, on what solution or suggestions to use when implementing the proof of concept application.
 
 \section{Going from desktop to tablet computers}
+When going from a standard desktop computer with mouse, keyboard, screen and lots of computational power, to a tablet, which more a less is a screen that you can navigate on using just your fingers, the major physical differences between such two devices is evident. But when considering how to port the notion of activities from a desktop computer to a tablet computer the differences is just as many. Especially when visualizing information, the challenges become even greater as stated by \citet{chittaro}:
 
+\begin{quotation}
+\emph{
+Unfortunately, limitations of mobile devices (e.g., limited screen size) make it impossible to follow a trivial porting approach from desktop computers to mobile devices. A considerable research effort is thus needed to understand how to design effective visualizations for mobile devices.
+}
+\end{quotation}
+
+It would therefore be interesting to consider how data is visualized in \citet{bardram2006}, which is a study on how ABC could work in a desktop environment and discuss how this could be represented in a mobile environment. One of the major challenges when going from the desktop environment to a mobile environment, no matter the reason, is the issue regarding parallel activities as described by \citet{chittaro}. So far we have considered activities to be a notion used in the ABC paradigme, but here one need to understand activities in a different context. When referring to parallel activities here, it refers to the fact that when a person is using a mobile device, they usually have to respond to other inputs as well. An example could be that one would be carrying around their mobile device, which means the holder of the device, not only have to interact with the device, but also needs to be able to walk at the same time. In another situation it could be a person that is performing physical work based on a drawing that is being shown on the device, or maybe a person is communicating with another person while interacting with the device. All of these situations leads on to the conclusion that when interacting with a mobile device, the user often does not have as much cognitive freedom to interact with the device, as they normally would in a standard office. \citet{chittaro} links this problem directly with the challenge of \emph{presenting} and \emph{selecting} data. Furthermore it is argued, that a user would still use powerful workstations for very complex tasks, given that they are probably way to hard to complete on a small mobile device, but often the users would like to take the result of these complex tasks with them to either show or use when carrying out another task. To further highlight this let us consider a scenario that takes place at an university:
+\par\vspace{\baselineskip}
+
+\textbf{Scenario 1}
+\begin{quotation}
+\emph{
+	During the day the student participates in a programming lecture. The lecture lasts a couple of hours, and during the lecture the student is following the lecture throught the online slideshow on his mobile device. The classroom does not offer enough table space to allow for the student to bring a laptop, so he relies on his tablet computer. After the lecture the student need to complete some programming exercises, and finds a workstation with the necessary IDE and compiler installed, and begins solving the exercises. Once the student is complete he saves his work to his mobile device, leaves the workstation and head back to the class where the solutions will be discussed.
+	}
+\end{quotation}
+
+This example clearly show two things. First of all the mobile device mainly, only have to offer the ability to \emph{present} data, not necessarly modify them. It also shows that complex tasks, such as a programming exercise, would ever be done on a mobile device due to its limitations. Since it would never be necessary to perform such complex tasks, files that are related to these tasks (such as IDE workspace, raw vector graphics for heavy foto editing and so on), are not necessary to present to the user. This means that only standard file types would be interesting, and the program in which they are opened, might not be as relevant as they are on the desktop. It should still be possible to open such file in ones favorite program on the mobile device, but a standard solution might just provide a standard way of showing such files, for quick access.
+
+Another important aspect that \citet{chittaro} mentions is the importance of \emph{human perception and cognitive capabilities}. He argues that for data to be properly visualized in a mobile environment, it is necessary for specific types of data to be easily recognizable, and more importantly, when one have implemented such a solutions it is very important that it be tested by proper users, in a real environment, in order to determine if the proper solution have been achieved. Such an evaluation will be a part of the full evaluation presented in chapter \ref{sec:evaluation}. The Windows XP integration with ABC allowed users to get a full overview over all opened files in a single activity, but also the ability to tab between activities. Due to the limited screen size, it is not feasible to show an opened version of all files, and neither is it feasible that one can tab between sets of opened files between activities. One should therefore consider a way to instead make it possible to easily identify a certain activity, and make the transition between activities fast, as well a giving a simple overview of the resources that an activity has. In other words there should be a way to make certain activities and resources distinctive. There should also be a simple overview of activities, such that the user would not be too confused.
+
+\subsubsection{Summary}
+In order to properly visualize activities several things need to be considered during implementation:
+
+\begin{itemize}
+	\item Higher need of viewing items, than editing items.
+	\item Only need to support simple tasks, not complex tasks.
+	\item There should be an easy way to view most standard types of files.
+	\item It should be possible to easily distinquish different activities.
+	\item The overview of activities should be simple.
+	\item It should be possible to quickly move between activities.
+\end{itemize}
 
 \section{Local and cloud computing}
+Another important aspect in the transition from desktop computer to tablet computers is the visibility of the file system. In a traditional desktop operating system, the file system is generally very open and easily accessible by the generel user. One can simply navigate to a folder or a file in the systen, dobbelt click and then the file will be opened in the standard program for the specific file type. This is something that changes when moving to a tablet computer. In the case of the iPad, the file system is not visible to the general user, although it exist underneath every application to make it possible for opening and closing files. On the iOS operating system every application works like a little sandbox - they only have access to their own little box of files as can be seen in figure \ref{fig:sandbox}.
 
+\begin{figure}[ht!]
+  \centering
+    \includegraphics[scale=0.8]{sandbox}
+  \caption{\emph{Sandboxing in iOS. File are allowed to access their own protected pool of files, but cannot directly gain access to another programs files. In this example the Pages application for iPad would never be able to access the files from the Dropbox application.}}
+  \label{fig:sandbox}
+\end{figure}
+
+However, it is recognized that developers and users might want files in one application to be opened in another application. How this works is showed in figure \ref{fig:requestOpen}. It is possible from a certain application to open one of its file in another application. In figure \ref{fig:sandbox} the Pages application wanted to access another applications files and was denied. However it is possible for the Dropbox application to say that it want Pages to open its file.
+
+\begin{figure}[ht!]
+  \centering
+    \includegraphics[scale=0.8]{openFileRequest}
+  \caption{\emph{How to open files in other applications in iOS. From the Dropbox applications point of view it is possible to open one of its private files in a another application, like Pages.}}
+  \label{fig:requestOpen}
+\end{figure}
+
+The reason interaction between applications is like this is due to security reasons. If other applications cannot access your files, then they cannot change them, or apply destructive malware to your application. However this solution is not feasible. Dropbox is a widely used applications for synchronizing files between different personal devices. Dropbox thus serves as a mobile filesystem across several computers and devices, and even allows shared files and folders with other Dropbox users. Having to access files in the Dropbox application before being able to add them to an activity on the iPad is simply not a feasible solution, and the problem shown in figure \ref{fig:sandbox} also shows that it is not possible to go the other way around. Only a few standard iOS applications allow other applications to access their files (like the foto application where images from the camera is stored), but this is very limited and cannot be extended to other applications. A solution to this problem is by using the cloudservice provided by Dropbox.
+
+In cloudcomputing services are stored online, often in the form of data storage, or computing power, where it can be accessed from anywhere, usually through a webbrowser, independant of the OS accessing it. It only requires an internet connection as well as a compatible webbrowser as explained in the \citet{cloud}. In this case Dropbox offers storage in the cloud, that can be accessed by local application using their public API. This way it is possible to access files in the cloud, instead of the local Dropbox application. It also makes it possible to download these files if necessary, and open them in external programs, directly from our own application. This solution is shown in figure \ref{fig:dropboxREST}.
+
+\begin{figure}[ht!]
+  \centering
+    \includegraphics[scale=0.8]{dropboxREST}
+  \caption{\emph{Illustration on how the ABC client can communicate with the Dropbox cloud service, and present it as a local file system, from which the user can access and open files in other programs.}}
+  \label{fig:dropboxREST}
+\end{figure}
+
+This way it is possible to have a notion of a local file system, from which the user can add files as resources to activities, and also open these files in other applications within iOS.
+
+\subsubsection{Summary}
+To make it possible for users to access files, and use our application as the point from which all activities and resources is managed, it is necessary to connect to a cloud service, like Dropbox, which can act as a fully accessible file system, from which users can add resources to their current activities. This is necessary because the full file system, is not directly accessible by the user in an iOS environment, and because, and it would not be possible otherwise, to prevent users from having to use other applications in order to make ours usable.
 
 \section{Location tracking}
+In section \ref{sec:adaptaware} it was argued how it was possible to implement a location tracking system within an ABC client. Location tracking will be further elaborated in this section.
 
+The first important issue to solve when it comes to location tracking, is to define \emph{how} to do location tracking. There are essentially two ways to do location tracking: coordinates or proximity. by using coordinates one would use a wireless technology to pin point your geographical coordinates. These coordinates can then be used to calculate your distance to other known places, using their geographical coordinates as well, and then determine whether you are within a suitable range, to be considered situated in that location. When considering such a solution two things are important to keep in mind; we are designing our solution for a university, in this case the IT university of Copenhagen, and we are going to implement a solution that is able to detect if we are in a specific room. Now using point processing one would be location independent, as one would always work on a uniform set of coordinates that can be used for distance calculations. However, finding out your exactly geographical coordinates can be problematic in a building, since one would either rely on coordinates retrieved from a satelite, which can vary a couple of meters from your actual position, or by using node triangulation which requires multiple wireless nodes to be able to locate the device. In this case we are not interested in knowing our current location \emph{specifically}. What we are interested in is what we are close to as illustrated in figure \ref{fig:proximity}.
 
+\begin{figure}[ht!]
+  \centering
+    \includegraphics[scale=0.6]{proximity}
+  \caption{\emph{In the case of proximity tracking, it is not important where your exact position is, just that you know you are in a certain area}}
+  \label{fig:proximity}
+\end{figure}
+
+Using proximity it is possible to just query where the device is, and the node that detected you last, would respond that you are within its range. \citet{bardram2012} made use of that in their RecticularSpaces study, by using the ITU Bluetooth location tracking system BLIP. The BLIP system offers a solution where it is possible for a device to query a webservice with its MAC address and is returned the current area in which it is situated, as well as the closest node that detected it. The BLIP system works on an event-based principle, such that each time a device is detected, the webservice is made aware of it, and the information is stored. When a device have not been detected for a while, its information is removed from the webservice. In order for a device to get detected, its bluetooth signature needs to be visible to other devices. Since it is possible to get location information, the next step would be to associate activities with a certain location. When this table is made, each time the devices is detected by a BLIP node, the listed activities for a user can be updated.
+ 
+\subsubsection{Summary}
+To implement location tracking, the ITU bluetooth location system, BLIP, will be used. It offers the possibility to find out which area a certain device is currently in, and this information can be used to create a mapping between locations and activities to filter activities based on the information from the BLIP system.
